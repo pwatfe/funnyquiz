@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+
+<body>
+
+	<div layout:fragment="content">
+		<div class="container">
+
+			<img th:src="@{/images/top.jpg}"
+				class="img-fluid mx-auto d-block" alt="Imagen cabecera">
+
+			
+			<div th:if="${message != null}" class="alert alert-danger" role="alert"><p th:utext="${message}"></p></div>
+
+			<form class="formulario" th:action="@{/welcome}" method="POST">
+				<div class="form-group">
+					<label for="clave" class="letra" th:utext="${passwordText}"></label> <input
+						type="password" th:name="param" class="form-control"
+						placeholder="Introduzca la contraseña..." />
+				</div>
+
+				<button type="submit" class="btn btn-outline-primary">Comenzar</button>
+			</form>
+
+			<img th:src="@{/images/bottom.jpg}"
+				class="img-fluid mx-auto d-block" alt="Imagen pie">
+
+		</div>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:fragment="header">
+	
+		<title th:utext="${@questions.targetPerson}"></title>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Application css -->
+		<link rel="stylesheet" th:href="@{/css/main.css}" />
+		
+		<!-- Bootstrap. @see version in pom.xml -->
+		<link th:href="@{/webjars/bootstrap/4.1.1/dist/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+		
+		<!-- Application js -->
+		<script th:src="@{/js/forms.js}"></script>
+		<!-- Bootstrap. @see version in pom.xml -->
+		<script th:src="@{/webjars/bootstrap/4.1.1/dist/js/bootstrap.min.js}"></script>
+		<!-- jQuery v1.11.1 -->
+		<script th:src="@{/js/jquery.js}"></script>
+	
+	</head>
+
+</html>

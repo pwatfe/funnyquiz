@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+
+<body>
+
+	<div layout:fragment="content">
+		<div class="container">
+
+			<img th:src="@{/images/top.jpg}"
+				class="img-fluid mx-auto d-block" alt="Imagen cabecera">
+
+			
+			<div th:if="${success != null}" class="alert alert-success" role="alert"><p th:utext="${success}"></p></div>
+			<div th:if="${message != null}" class="alert alert-danger" role="alert"><p th:utext="${message}"></p></div>
+
+			<form class="formulario" th:action="@{'/question/' + ${id}}" method="POST" th:object="${question}">
+				<div class="form-group">
+					<label for="clave" class="letra" th:text="*{question}"></label> <input
+						type="text" th:name="param" class="form-control"
+						th:placeholder="*{help}" />
+				</div>
+
+				<button type="submit" class="btn btn-outline-primary">Continuar</button>
+			</form>
+
+			<img th:src="@{/images/bottom.jpg}"
+				class="img-fluid mx-auto d-block" alt="Imagen pie">
+
+		</div>
+
+	</div>
+</body>
+</html>
